@@ -1,0 +1,42 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.nav {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav a {
+  margin: 0 10px;
+  color: var(--mainColor);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+  }
+}

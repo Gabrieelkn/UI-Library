@@ -1,0 +1,165 @@
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin: auto;
+  color: #040f0f;
+}
+
+.nav {
+  background-color: #fcfffc;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  top: 100%;
+  height: 90vh;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translateX(-1000px);
+  transition: all 0.5s ease-in-out;
+  z-index: 99;
+  opacity: 0;
+  color: #040f0f;
+}
+@media (min-width: 1024px) {
+  .nav {
+    position: static;
+    order: 1;
+    transition: none;
+    transform: translateX(0);
+    z-index: 0;
+    width: 60%;
+    max-width: 1000px;
+    height: 80%;
+    box-shadow: none;
+    opacity: 1;
+    font-size: small;
+  }
+}
+.nav ul {
+  list-style: none;
+  height: 80%;
+  gap: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .nav ul {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    height: 100%;
+    padding-bottom: 0;
+  }
+}
+.nav li {
+  width: 100%;
+  text-align: start;
+  padding: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .nav li {
+    border: none;
+    text-align: center;
+  }
+}
+.nav b {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.nav b:hover {
+  color: #248232;
+  cursor: pointer;
+}
+.nav a {
+  text-decoration: none;
+  color: #040f0f;
+  font-weight: 600;
+  position: relative;
+}
+.nav a:hover {
+  cursor: pointer;
+  color: #248232;
+}
+.nav .closeNav {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.allAccess {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.allAccess a {
+  color: var(--mainColor);
+}
+
+.allAccess a:hover {
+  color: #007bff;
+}
+
+.arrow {
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.allAccess:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (min-width: 768px) {
+  .nav .closeNav {
+    display: none;
+  }
+}
+.nav .closeNav .icon {
+  height: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+}
+.nav .closeNav .icon:hover {
+  cursor: pointer;
+}
+
+.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}

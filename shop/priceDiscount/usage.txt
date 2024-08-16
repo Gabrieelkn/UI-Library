@@ -1,0 +1,5 @@
+import PriceDiscount from "./components"
+
+export default function Page() {
+  return <PriceDiscount originalPrice={350} discount={10} />;
+}

@@ -1,0 +1,65 @@
+"use client"
+import { useState } from "react";
+import dayjs from "dayjs";
+
+export default function Calendar() {
+  const [currentDate, setCurrentDate] = useState(dayjs());
+  const daysInMonth = currentDate.daysInMonth();
+  const startOfMonth = currentDate.startOf("month").day();
+
+  const handlePrevMonth = () => {
+    setCurrentDate(currentDate.subtract(1, "month"));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentDate(currentDate.add(1, "month"));
+  };
+
+  const renderDays = () => {
+    const days = [];
+    for (let i = 0; i < startOfMonth; i++) {
+      days.push(<div key={`empty-${i}`} className="text-center text-gray-400"></div>);
+    }
+    for (let day = 1; day <= daysInMonth; day++) {
+      days.push(
+        <div
+          key={day}
+          className="text-center py-2 cursor-pointer hover:bg-indigo-200 rounded-lg"
+        >
+          {day}
+        </div>
+      );
+    }
+    return days;
+  };
+
+  return (
+    <div className="p-4 max-w-md mx-auto">
+      <div className="flex justify-between items-center mb-4">
+        <button
+          onClick={handlePrevMonth}
+          className="px-2 py-1 bg-indigo-500 text-white rounded-lg"
+        >
+          Prev
+        </button>
+        <h2 className="text-lg font-semibold">
+          {currentDate.format("MMMM YYYY")}
+        </h2>
+        <button
+          onClick={handleNextMonth}
+          className="px-2 py-1 bg-indigo-500 text-white rounded-lg"
+        >
+          Next
+        </button>
+      </div>
+      <div className="grid grid-cols-7 gap-2">
+        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, idx) => (
+          <div key={idx} className="text-center font-semibold">
+            {day}
+          </div>
+        ))}
+        {renderDays()}
+      </div>
+    </div>
+  );
+}

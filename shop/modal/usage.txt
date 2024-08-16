@@ -1,0 +1,36 @@
+"use client";
+import { useState } from "react";
+import Modal from "./Modal"; // Adjust the path as needed
+
+export default function ExamplePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  const handleAction = () => {
+    // Add action logic here
+    console.log("Action button clicked!");
+    closeModal();
+  };
+
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-6">Modal Example</h1>
+      <button
+        onClick={openModal}
+        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+      >
+        Open Modal
+      </button>
+      
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onAction={handleAction}
+        title="Sample Modal"
+        actionText="Confirm"
+        variant="default" // You can use "small", "default", "large" based on modal size
+      />
+    </div>
+  );
+}

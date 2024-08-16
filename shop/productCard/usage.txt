@@ -1,0 +1,23 @@
+import ProductCard from "@/components/ProductCard";
+
+export default function Home() {
+  return (
+    <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ProductCard
+        image="/images/product1.jpg"
+        name="Product 1"
+        price="29.99"
+      />
+      <ProductCard
+        image="/images/product2.jpg"
+        name="Product 2"
+        price="49.99"
+      />
+      <ProductCard
+        image="/images/product3.jpg"
+        name="Product 3"
+        price="19.99"
+      />
+    </div>
+  );
+}

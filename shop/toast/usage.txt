@@ -1,0 +1,31 @@
+"use client";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import Toast from "./toast";
+
+export default function Usage() {
+  // State to control the visibility of the toast
+  const [toast, setToast] = useState(false);
+
+  // Function to show the toast
+  const handleToast = () => {
+    setToast(true);
+  };
+
+  return (
+    <>
+      {/* Button to trigger the toast */}
+      <Button variant="outline" onClick={handleToast}>
+        Show toast
+      </Button>
+
+      {/* Toast component */}
+      {/* 
+        The `toast` prop controls whether the toast is visible or not.
+        The `setToast` function is used to change the visibility state.
+        The `text` prop is the message displayed inside the toast.
+      */}
+      <Toast toast={toast} setToast={setToast} text="Form submitted" />
+    </>
+  );
+}

@@ -1,0 +1,42 @@
+"use client";
+import { useEffect } from "react";
+
+export default function Toast({ toast, setToast, text }) {
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => {
+        // Trigger the slide-out animation by setting a CSS class
+        document.getElementById("toast").classList.add("animate-slide-out-top");
+
+        // Set toast to false after the animation ends
+        setTimeout(() => {
+          setToast(false);
+        }, 500); // Match this duration to the slide-out animation duration
+      }, 2500); // Display the toast for 2.5 seconds before starting to slide out
+
+      return () => clearTimeout(timer); // Clear timeout if the effect is cleaned up
+    }
+  }, [toast, setToast]);
+
+  return (
+    toast && (
+      <div
+        id="toast"
+        className={` fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(0,229,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`}
+      >
+        <span>{text}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="20"
+          height="20"
+          viewBox="0 0 30 30"
+          fill="#ffffff"
+        >
+          <path d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z"></path>
+        </svg>
+      </div>
+    )
+  );
+}

@@ -1,0 +1,20 @@
+// Example usage of the Button component
+import Button from './components/Button';
+
+const Example = () => {
+  return (
+    <div className="space-y-4">
+      <Button variant="primary" size="medium" onClick={() => alert('Primary Button Clicked')}>
+        Primary Button
+      </Button>
+      <Button variant="secondary" size="large" onClick={() => alert('Secondary Button Clicked')}>
+        Secondary Button
+      </Button>
+      <Button variant="outline" size="small" disabled>
+        Outline Button
+      </Button>
+    </div>
+  );
+};
+
+export default Example;
