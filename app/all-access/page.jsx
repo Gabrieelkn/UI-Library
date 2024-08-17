@@ -7,13 +7,11 @@ export default function Pricing() {
           Get lifetime access to 30+ components, all for a one-time payment.
         </h3>
       </div>
-      <div className=" shadow-mainColor grid place-items-center max-w-md h-[400px] w-full dark:bg-white bg-slate-700  shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-center text-background mb-4">
-          Premium
-        </h2>{" "}
-        <span className="text-green-500 text-4xl font-bold">$50</span>
-        <p className="text-center text-background mb-6">one-time payment </p>
-        <ul className="list-disc list-inside dark:text-gray-700 text-white mb-6">
+      <div className="bg-slate-300 grid place-items-center max-w-md h-[400px] w-full dark:bg-slate-700  shadow-md rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-center mb-4">Premium</h2>{" "}
+        <span className="text-green-500 text-6xl font-bold">$50</span>
+        <p className="text-center mb-6">one-time payment </p>
+        <ul className="list-disc list-inside mb-6">
           <li>Access to all components</li>
           <li>Future updates included</li>
           <li>Customer support</li>
