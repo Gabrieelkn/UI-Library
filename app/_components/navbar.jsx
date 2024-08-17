@@ -3,6 +3,7 @@ import { useUser } from "@/lib/currentUserProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { links } from "@/utils/links";
 
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
@@ -42,14 +43,14 @@ export default function Navbar() {
     <>
       <button
         ref={hamburgerRef}
-        className="order-first w-10 h-10 grid place-items-center rounded-lg border-none hover:cursor-pointer lg:hidden"
+        className="order-first grid place-items-center rounded-lg border-none hover:cursor-pointer md:hidden"
         onClick={toggleMenu}
         aria-label="hamburger"
       >
         <svg
           className="fill-current dark:text-white"
-          width="20px"
-          height="20px"
+          width="25px"
+          height="25px"
           viewBox="0 0 52 52"
           data-name="Layer 1"
           id="Layer_1"
@@ -64,32 +65,49 @@ export default function Navbar() {
         ref={navRef}
         className={`${
           visible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-        } shadow-lg bg-transparent bg-white lg:bg-transparent absolute top-full left-0 w-full max-w-md h-[90vh] flex justify-center items-start transition-all duration-500 ease-in-out z-50 lg:static lg:transform-none lg:opacity-100 lg:w-full lg:max-w-full lg:h-[100%] lg:shadow-none`}
+        } shadow-lg bg-transparent bg-white md:bg-transparent absolute top-full left-0 w-full max-w-md min-h-[90vh] md:min-h-px flex justify-center items-start transition-all duration-500 ease-in-out z-50 md:static md:transform-none md:opacity-100 md:w-full md:max-w-full md:h-[100%] md:shadow-none`}
       >
-        <ul className="list-none h-[80%] gap-2 w-full flex justify-around flex-col items-center pb-2 md:flex-row md:justify-center md:items-center md:pt-0 md:h-full md:pb-0">
+        <ul className="list-none h-[80%] gap-2 w-full flex justify-around flex-col items-start pb-2 md:flex-row md:justify-center md:items-center md:pt-0 md:h-full md:pb-0">
           <NavItem href="/components" text="Components" />
           <NavItem href="/documentation" text="Documentation" />
-
-          <li className="inline-flex items-center transition-colors duration-300 ease hover:text-blue-500 w-full text-start p-2 lg:border-none lg:text-center">
-            <Link
-              href={user ? "/all-access" : "/sign-in"}
-              className="text-mainColor hover:text-blue-500"
-            >
-              Get all access{" "}
-              <span className="ml-1 transition-transform duration-300 ease-in-out transform hover:translate-x-1">
-                ➜
-              </span>
-            </Link>
-          </li>
+          <NavItem
+            href={user ? "/all-access" : "/sign-in"}
+            text={
+              <>
+                <span className="text-mainColor"> Get all access</span>
+                <span className="text-mainColor ml-1 transition-transform duration-300 ease-in-out transform hover:translate-x-1">
+                  ➜
+                </span>
+              </>
+            }
+          />
+          <div className="md:hidden">
+            {links.map(([title, link]) => (
+              <li
+                key={title}
+                className="w-full text-start p-2 lg:border-none lg:text-center"
+              >
+                <Link
+                  href={link}
+                  className="text-primary md:text-inherit no-underline hover:text-[#0056b3]"
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </div>
         </ul>
       </nav>
     </>
   );
 }
 
-function NavItem({ href, text }) {
+function NavItem({ href, text, key }) {
   return (
-    <li className="w-full text-start p-2 lg:border-none lg:text-center">
+    <li
+      key={key}
+      className="w-full md:text-center p-2 lg:border-none lg:text-center"
+    >
       <Link
         href={href}
         className="text-mainColor md:text-inherit font-semibold no-underline hover:text-[#0056b3]"
