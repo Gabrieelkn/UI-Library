@@ -47,7 +47,7 @@ function NavigationBar() {
     <div className="bg-mainColor p-1 grid place-items-end relative overflow-visible">
       <button
         ref={hamburgerRef}
-        className="w-10 h-10  grid place-items-center rounded-md border-none bg-transparent lg:hidden hover:cursor-pointer"
+        className="w-10 h-10 bg-red-800 grid place-items-center rounded-md border-none bg-transparent lg:hidden hover:cursor-pointer"
         onClick={toggleMenu}
         aria-label="hamburger"
       >

@@ -7,7 +7,7 @@ import { useUser } from "@/lib/currentUserProvider";
 import Link from "next/link";
 import { useEffect } from "react";
 import { supabase } from "@/lib/supabase/supabaseClient";
-import SearchBar from "@/shop/searchBar/ex";
+import SearchBar from "@/public/shop/searchBar/ex";
 import { usePathname } from "next/navigation";
 
 export default function Header() {

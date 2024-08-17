@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import path from "path";
 import ComponentWrapper from "@/app/_components/componentWrapper";
 import { componentMap } from "@/utils/componentsMap";
 
@@ -13,18 +14,22 @@ export default async function SingleComponent({ params }) {
   }
 
   try {
-    const code = await fs.readFile(
-      process.cwd() + componentInfo.codePath,
-      "utf8"
+    // Construct the full file paths
+    const codeFilePath = path.join(
+      process.cwd(),
+      "public",
+      componentInfo.codePath
     );
+    const code = await fs.readFile(codeFilePath, "utf8");
 
-    // Read usage path only if it exists
     let usage = "";
     if (componentInfo.usagePath) {
-      usage = await fs.readFile(
-        process.cwd() + componentInfo.usagePath,
-        "utf8"
+      const usageFilePath = path.join(
+        process.cwd(),
+        "public",
+        componentInfo.usagePath
       );
+      usage = await fs.readFile(usageFilePath, "utf8");
     }
 
     return (
