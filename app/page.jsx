@@ -67,15 +67,15 @@ export default function Home() {
             integrate them into your project. With our components, building
             beautiful and functional websites has never been easier!
           </p>
-          <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex flex-col justify-center items-center gap-6 md:justify-start md:flex-row">
             <Link
-              className="bg-mainColor text-white py-4 px-12 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
+              className="bg-mainColor w-3/4 max-w-[250px] text-center text-white py-4 px-8 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
               href="/components"
             >
               Browse Components
             </Link>
             <Link
-              className="dark:bg-white bg-slate-300 text-mainColor text-center py-4 px-12 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
+              className="dark:bg-white w-3/4 max-w-[250px] bg-slate-300 text-mainColor text-center py-4 px-12 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
               href="/documentation"
             >
               See Docs

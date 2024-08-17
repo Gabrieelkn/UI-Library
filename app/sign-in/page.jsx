@@ -39,7 +39,7 @@ export default function Login() {
   };
 
   return (
-    <div className="container h-3/4 rounded-lg bg-slate-300 dark:bg-slae-700  m-auto flex flex-col items-center justify-center min-h-screen shadow-md">
+    <div className="w-full fixed top-0 h-3/4 rounded-lg bg-slate-300 dark:bg-slae-700  m-auto flex flex-col items-center justify-center min-h-screen shadow-md">
       <div className=" p-8  w-full max-w-sm">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
           Login

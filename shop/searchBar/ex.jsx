@@ -48,7 +48,7 @@ export default function SearchBar() {
             <li
               onClick={() => setSearchQuery("")}
               key={title}
-              className=" px-4 mb-1 w-full"
+              className="px-4 py-1 mb-1 w-full"
             >
               <Link href={value}>{title}</Link>
             </li>

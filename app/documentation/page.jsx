@@ -3,7 +3,7 @@ import { HighlightCode } from "@/lib/highlight";
 
 export default function Documentation() {
   return (
-    <div className="container p-8 rounded-lg shadow-md">
+    <div className="container rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Getting Started</h1>
 
       <p className="mb-4">

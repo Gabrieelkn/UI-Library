@@ -6,7 +6,7 @@ import Image from "next/image";
 import Spinner from "@/shop/spinner/spinner";
 
 export default function User() {
-  const { user } = useUser(); // Get the user object
+  const { user, setUser } = useUser(); // Get the user object
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -14,7 +14,8 @@ export default function User() {
     if (error) {
       console.error("Error logging out:", error.message);
     } else {
-      router.push("/"); // Redirect to homepage or sign-in page after logout
+      setUser(null);
+      router.push("/");
     }
   };
 
