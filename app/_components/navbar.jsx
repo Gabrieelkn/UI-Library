@@ -43,14 +43,14 @@ export default function Navbar() {
     <>
       <button
         ref={hamburgerRef}
-        className="order-first grid place-items-center rounded-lg border-none hover:cursor-pointer md:hidden"
+        className="relative order-first grid place-items-center rounded-lg border-none hover:cursor-pointer md:hidden"
         onClick={toggleMenu}
         aria-label="hamburger"
       >
         <svg
-          className="fill-current dark:text-white"
-          width="25px"
-          height="25px"
+          className="fill-current dark:text-white h-7 w-7"
+          width="15px"
+          height="15px"
           viewBox="0 0 52 52"
           data-name="Layer 1"
           id="Layer_1"
@@ -65,9 +65,9 @@ export default function Navbar() {
         ref={navRef}
         className={`${
           visible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-        } shadow-lg bg-transparent bg-white md:bg-transparent absolute top-full left-0 w-full max-w-md min-h-[90vh] md:min-h-px flex justify-center items-start transition-all duration-500 ease-in-out z-50 md:static md:transform-none md:opacity-100 md:w-full md:max-w-full md:h-[100%] md:shadow-none`}
+        } shadow-lg bg-transparent bg-white md:bg-transparent fixed top-0 left-0 w-3/4 max-w-md h-[100vh] overflow-scroll md:overflow-hidden md:min-h-px flex justify-center items-start transition-all duration-500 ease-in-out z-50 md:static md:transform-none md:opacity-100 md:w-full md:max-w-full md:h-[100%] md:shadow-none`}
       >
-        <ul className="list-none h-[80%] gap-2 w-full flex justify-around flex-col items-start pb-2 md:flex-row md:justify-center md:items-center md:pt-0 md:h-full md:pb-0">
+        <ul className="list-none gap-2 w-full flex justify-around flex-col items-start pb-2 pl-2 md:pl-0 mb-10 md:flex-row md:justify-center md:items-center md:pt-0 md:h-full md:pb-0">
           <NavItem href="/components" text="Components" />
           <NavItem href="/documentation" text="Documentation" />
           <NavItem
@@ -89,7 +89,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link}
-                  className="text-primary md:text-inherit no-underline hover:text-[#0056b3]"
+                  className="block w-100 text-primary md:text-inherit no-underline hover:text-[#0056b3]"
                 >
                   {title}
                 </Link>
