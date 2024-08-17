@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <UserProvider>
-            <div className="min-h-screen">
-              <Header />
+            <Header />
+            <div className="min-h-screen mt-[10vh] md:mt-[10vh]">
               {children}
-              <Footer />
             </div>
+            <Footer />
           </UserProvider>
         </ThemeProvider>
       </body>
