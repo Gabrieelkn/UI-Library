@@ -69,13 +69,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-6 md:flex-row">
             <Link
-              className="bg-mainColor text-white py-4 px-12 rounded-[var(--border-radius)] transition-all duration-300 ease-in-out hover:scale-110"
+              className="bg-mainColor text-white py-4 px-12 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
               href="/components"
             >
               Browse Components
             </Link>
             <Link
-              className="dark:bg-white bg-slate-300 text-mainColor text-center py-4 px-12 rounded-[var(--border-radius)] transition-all duration-300 ease-in-out hover:scale-110"
+              className="dark:bg-white bg-slate-300 text-mainColor text-center py-4 px-12 rounded-lg transition-all duration-300 ease-in-out hover:scale-110"
               href="/documentation"
             >
               See Docs
