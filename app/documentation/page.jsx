@@ -8,7 +8,7 @@ export default function Documentation() {
 
       <p className="mb-4">
         To use these components, you need to have <strong>Next.js</strong>{" "}
-        installed. If you don't have Next.js installed, follow the instructions
+        installed. If you do not have Next.js installed, follow the instructions
         on the
         <Link
           href="https://nextjs.org/docs/getting-started"
@@ -39,7 +39,7 @@ export default function Documentation() {
       <h2 className="text-xl font-semibold mb-2">Installation</h2>
 
       <p className="mb-4">
-        If you don't have Next.js installed, you can install it with the
+        If you do not have Next.js installed, you can install it with the
         following command:
       </p>
       <HighlightCode language="bash" content={`npx create-next-app@latest`} />
