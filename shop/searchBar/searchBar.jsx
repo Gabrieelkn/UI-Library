@@ -16,7 +16,7 @@ export default function SearchBar() {
     <div className="w-3/4 h-96 grid place-items-center relative m-auto">
       <input
         type="text"
-        className="w-full px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out text-white"
+        className="w-full dark:placeholder:text-gray-300 px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 dark:bg-slate-700 ease-in-out dark:text-white"
         placeholder="Search..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
