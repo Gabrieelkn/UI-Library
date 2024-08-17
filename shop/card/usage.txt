@@ -1,0 +1,9 @@
+import Card from "./components/card"
+
+export default function CardWrapper() {
+  return (
+    <div className="h-96 grid place-items-center w-full">
+      <Card title="Title" text="This is the text for the card" />
+    </div>
+  );
+}
