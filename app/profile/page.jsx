@@ -22,7 +22,7 @@ export default function User() {
     <Spinner />
   ) : (
     <div className="relative container">
-      <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 focus:outline-none">
+      <div className="flex items-center gap-2 p-2 rounded-lg focus:outline-none">
         <Image
           src={user.user_metadata.avatar_url}
           width={50}
@@ -37,17 +37,17 @@ export default function User() {
 
       <div className="mt-2 w-48 border rounded-lg shadow-lg">
         <ul>
-          <li className="px-4 py-2  hover:bg-gray-100">
+          <li className="px-4 py-2  hover:bg-gray-100 hover:text-mainColor">
             <span className="block font-medium">Email:</span>
             <span className="block text-sm ">{user?.email}</span>
           </li>
-          <li className="px-4 py-2 hover:bg-gray-100">
+          <li className="px-4 py-2 hover:bg-gray-100 hover:text-mainColor">
             <span className="block font-medium">Name:</span>
             <span className="block text-sm">
               {user?.user_metadata?.full_name || "N/A"}
             </span>
           </li>
-          <li className="px-4 py-2 hover:bg-gray-100">
+          <li className="px-4 py-2 hover:bg-gray-100 hover:text-mainColor">
             <span className="block font-medium">Provider:</span>
             <span className="block text-sm">
               {user?.app_metadata.provider || "N/A"}
