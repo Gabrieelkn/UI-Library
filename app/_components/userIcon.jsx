@@ -5,7 +5,7 @@ export default function UserIcon({ user }) {
   return (
     <Button size="icon" variant="secondary">
       <Link
-        href={user ? "/profile" : "sign-in"}
+        href={user ? "/profile" : "/sign-in"}
         className=" rounded-full"
         aria-label="User Profile"
       >
