@@ -18,10 +18,10 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-3/4 grid place-items-center relative m-auto">
+    <div className="w-full order-2 md:order-none md:w-[30%] grid place-items-center relative m-auto">
       <input
         type="text"
-        className="w-full px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out dark:text-white"
+        className="w-full px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out dark:bg-slate-700 dark:placeholder:text-gray-300 dark:text-white"
         placeholder="Search components..."
         value={searchQuery}
         onChange={handleSearch}
