@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function UserIcon() {
+export default function UserIcon({ user }) {
   return (
-    <Button variant="secondary">
-      <Link href="/profile" className=" rounded-full" aria-label="User Profile">
+    <Button size="icon" variant="secondary">
+      <Link
+        href={user ? "/profile" : "sign-in"}
+        className=" rounded-full"
+        aria-label="User Profile"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
