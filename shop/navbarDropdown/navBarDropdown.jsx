@@ -94,18 +94,17 @@ function NavigationBar() {
             <li
               key={title}
               className="relative w-full text-start p-2 lg:border-none lg:text-center"
-              onMouseEnter={() => showDropdown(index)}
-              onMouseLeave={hideDropdown}
+              onClick={() => showDropdown(index)}
             >
               <div className="flex justify-between items-center lg:justify-center">
                 <Link
                   className="text-white uppercase transition-all duration-300 ease-in-out hover:font-bold hover:cursor-pointer"
-                  href={href}
+                  href={dropdownVisible ? href : "#"}
                 >
                   {title}
                 </Link>
                 {dropdownLinks.length > 0 && (
-                  <span className="ml-2 text-white">
+                  <span onMouseLeave={hideDropdown} className="ml-2 text-white">
                     {dropdownVisible === index ? (
                       <FaChevronUp />
                     ) : (
@@ -120,7 +119,7 @@ function NavigationBar() {
                     dropdownVisible === index
                       ? "block transition-all duration-500 ease-in-out"
                       : "transition-all duration-500 ease-in-out hidden"
-                  } left-0 top-full mt-2 w-full bg-mainColor lg:absolute lg:mt-full lg:top-auto lg:left-auto lg:w-auto`}
+                  } left-0 top-full mt-2 w-full bg-mainColor lg:absolute lg:mt-[15%] lg:top-auto lg:left-auto lg:w-auto lg:rounded-lg`}
                 >
                   {dropdownLinks.map(([subTitle, subHref]) => (
                     <li key={subTitle} className="lg:inline-block">
