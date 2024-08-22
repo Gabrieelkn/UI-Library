@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-export default function Toast({ toast, setToast, text }) {
+export default function Toast({ toast, setToast, text, variant = "success" }) {
   useEffect(() => {
     if (toast) {
       const timer = setTimeout(() => {
@@ -18,24 +18,47 @@ export default function Toast({ toast, setToast, text }) {
     }
   }, [toast, setToast]);
 
+  const toastVariants = {
+    success: `fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(0,229,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`,
+    error: ` fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(229,0,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`,
+  };
+
   return (
     toast && (
-      <div
-        id="toast"
-        className={` fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(0,229,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`}
-      >
+      <div id="toast" className={toastVariants[variant]}>
         <span>{text}</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="20"
-          height="20"
-          viewBox="0 0 30 30"
-          fill="#ffffff"
-        >
-          <path d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z"></path>
-        </svg>
+        {variant === "success" ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="20"
+            height="20"
+            viewBox="0 0 30 30"
+            fill="#ffffff"
+          >
+            <path d="M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z"></path>
+          </svg>
+        ) : (
+          <svg width="18" height="18">
+            <line
+              x1="2"
+              y1="2"
+              x2="16"
+              y2="16"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="16"
+              y1="2"
+              x2="2"
+              y2="16"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        )}
       </div>
     )
   );
