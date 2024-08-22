@@ -42,7 +42,7 @@ export default function Calendar() {
   };
 
   return (
-    <div className="w-full  h-96 grid place-items-center">
+    <div className="w-[95%]  h-96 grid place-items-center">
       <div className="p-4 max-w-md mx-auto shadow-md">
         <div className="flex justify-between items-center mb-4">
           <button
