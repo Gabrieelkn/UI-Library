@@ -65,7 +65,7 @@ export default function Navbar() {
         ref={navRef}
         className={`${
           visible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-        } shadow-sm dark:shadow-white dark:bg-backgroun bg-white shadow-slate-700 no-scrollbar md:bg-transparent fixed top-0 left-0 w-3/4 max-w-md h-[100vh] overflow-scroll md:overflow-hidden md:min-h-px flex justify-center items-start transition-all duration-500 ease-in-out z-50 md:static md:transform-none md:opacity-100 md:w-full md:max-w-full md:h-[100%] md:shadow-none`}
+        } shadow-sm dark:shadow-white dark:bg-muted bg-white shadow-slate-700 no-scrollbar md:bg-transparent fixed top-0 left-0 w-3/4 max-w-md h-[100vh] overflow-scroll md:overflow-hidden md:min-h-px flex justify-center items-start transition-all duration-500 ease-in-out z-50 md:static md:transform-none md:opacity-100 md:w-full md:max-w-full md:h-[100%] md:shadow-none`}
       >
         <ul className="list-none gap-2 w-full flex justify-around flex-col items-start pb-2 pl-2 md:pl-0 mb-10 md:flex-row md:justify-center md:items-center md:pt-0 md:h-full md:pb-0">
           <NavItem href="/components" text="Components" />
@@ -74,8 +74,11 @@ export default function Navbar() {
             href={user ? "/all-access" : "/sign-in"}
             text={
               <>
-                <span className="text-mainColor"> Get all access</span>
-                <span className="text-mainColor ml-1 transition-transform duration-300 ease-in-out transform hover:translate-x-1">
+                <span className="text-mainColor dark:text-foreground">
+                  {" "}
+                  Get all access
+                </span>
+                <span className="text-mainColor dark:text-foreground ml-1 transition-transform duration-300 ease-in-out transform hover:translate-x-1">
                   ➜
                 </span>
               </>
@@ -89,7 +92,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link}
-                  className="block w-100 text-primary md:text-inherit no-underline hover:text-[#0056b3]"
+                  className="block w-100 text-primary dark:text-foreground md:text-inherit no-underline hover:text-[#0056b3]"
                 >
                   {title}
                 </Link>
@@ -110,7 +113,7 @@ function NavItem({ href, text, key }) {
     >
       <Link
         href={href}
-        className="text-mainColor md:text-inherit font-semibold no-underline hover:text-[#0056b3]"
+        className="text-mainColor dark:text-foreground md:text-inherit font-semibold no-underline hover:text-[#0056b3]"
       >
         {text}
       </Link>
