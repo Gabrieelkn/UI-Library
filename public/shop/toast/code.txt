@@ -19,8 +19,8 @@ export default function Toast({ toast, setToast, text, variant = "success" }) {
   }, [toast, setToast]);
 
   const toastVariants = {
-    success: `fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(0,229,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`,
-    error: ` fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(229,0,0)] text-white font-bold rounded-lg shadow-[0px_54px_55px_rgba(0,0,0,0.25),0px_-12px_30px_rgba(0,0,0,0.12),0px_4px_6px_rgba(0,0,0,0.12),0px_12px_13px_rgba(0,0,0,0.17),0px_-3px_5px_rgba(0,0,0,0.09)] animate-slide-in-top`,
+    success: `fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(0,229,0)] text-white font-bold rounded-lg shadow-lg animate-slide-in-top`,
+    error: ` fixed top-[5%] left-1/2 transform -translate-x-1/2 z-[9999] w-[200px] p-4 flex justify-center items-center gap-2 bg-[rgb(229,0,0)] text-white font-bold rounded-lg shadow-lg animate-slide-in-top`,
   };
 
   return (

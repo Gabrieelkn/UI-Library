@@ -1,9 +1,9 @@
 export default function Card({ title, text }) {
   return (
     <div className=" w-3/4 flex items-center justify-center z-50">
-      <div className="bg-gray-800 rounded-lg shadow-lg w-3/4 p-6 relative">
-        <h2 className="text-xl text-white font-semibold mb-4">{title}</h2>
-        <p className="text-white">{text}</p>
+      <div className="dark:bg-gray-800 rounded-lg shadow-lg w-3/4 p-6 relative">
+        <h2 className="text-xl dark:text-white font-semibold mb-4">{title}</h2>
+        <p className="dark:text-white">{text}</p>
       </div>
     </div>
   );
