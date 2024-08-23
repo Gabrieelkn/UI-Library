@@ -7,12 +7,12 @@ function PriceDiscount({ originalPrice, discount }) {
 
   return (
     <div className="h-96 grid items-center">
-      <div className=" p-4 bg-white shadow-md rounded-lg max-w-xs mx-auto">
+      <div className=" p-4 shadow-md dark:bg-slate-700 rounded-lg max-w-xs mx-auto">
         <div className="flex justify-center items-center text-center">
-          <p className="text-xl font-bold text-gray-900 line-through">
+          <p className="text-xl font-bold text-gray-900 dark:text-white line-through">
             ${originalPrice.toFixed(2)}
           </p>
-          <p className="ml-2 text-sm font-medium text-gray-500">
+          <p className="ml-2 text-sm font-medium text-gray-500 dark:text-white">
             -({discount}%)
           </p>
         </div>

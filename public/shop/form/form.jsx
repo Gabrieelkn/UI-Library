@@ -32,7 +32,7 @@ export default function Form() {
       >
         <div className="w-full flex flex-col items-start">
           <input
-            className="p-2 rounded-md border border-gray-300 w-full outline-none focus:border-blue-500"
+            className="p-2 rounded-md dark:bg-muted dark:placeholder-foreground border border-gray-300 w-full outline-none focus:border-blue-500"
             type="text"
             name="name"
             value={formData.name || ""}
@@ -43,7 +43,7 @@ export default function Form() {
         </div>
         <div className="w-full flex flex-col items-start">
           <input
-            className="p-2 rounded-md border border-gray-300 w-full outline-none focus:border-blue-500"
+            className="p-2 rounded-md dark:bg-muted dark:placeholder-foreground border border-gray-300 w-full outline-none focus:border-blue-500"
             type="email"
             name="email"
             value={formData.email || ""}
@@ -54,7 +54,7 @@ export default function Form() {
         </div>
         <div className="w-full flex flex-col items-start">
           <input
-            className="p-2 rounded-md border border-gray-300 w-full outline-none focus:border-blue-500"
+            className="p-2 rounded-md dark:bg-muted dark:placeholder-foreground border border-gray-300 w-full outline-none focus:border-blue-500"
             type="text"
             name="street"
             value={formData.street || ""}
@@ -65,7 +65,7 @@ export default function Form() {
         </div>
         <div className="w-full flex flex-col items-start">
           <input
-            className="p-2 rounded-md border border-gray-300 w-full outline-none focus:border-blue-500"
+            className="p-2 rounded-md dark:bg-muted dark:placeholder-foreground border border-gray-300 w-full outline-none focus:border-blue-500"
             type="text"
             name="number"
             value={formData.number || ""}

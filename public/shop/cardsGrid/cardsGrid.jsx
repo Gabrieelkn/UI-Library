@@ -29,7 +29,7 @@ export default function GridCards() {
 
 function Card({ title, description, action }) {
   return (
-    <div className="rounded-lg flex justify-between flex-col shadow-lg p-5">
+    <div className="rounded-lg flex justify-between flex-col shadow-lg dark:bg-muted p-5">
       <h2 className="text-xl font-bold mb-4">{title}</h2>
       <p className=" mb-4">{description}</p>
       <button className="w-full bg-mainColor text-white px-3 py-2 rounded-lg hover:bg-indigo-600 transition">

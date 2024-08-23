@@ -89,7 +89,7 @@ function Modal({
     >
       <motion.div
         ref={modalRef}
-        className={`bg-white rounded-lg shadow-lg w-3/4 p-6 relative ${modalVariants[variant]}`}
+        className={`bg-white dark:bg-muted  rounded-lg shadow-lg w-3/4 p-6 relative ${modalVariants[variant]}`}
         initial={{ scale: 0.9 }}
         animate={controls}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -99,7 +99,7 @@ function Modal({
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
         >
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 dark:text-foreground"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -113,8 +113,10 @@ function Modal({
             />
           </svg>
         </button>
-        <h2 className="text-xl text-black font-semibold mb-4">{title}</h2>
-        <p className="text-black">
+        <h2 className="text-xl dark:text-foreground font-semibold mb-4">
+          {title}
+        </h2>
+        <p className=" dark:text-foreground">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in

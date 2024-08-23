@@ -43,7 +43,7 @@ export default function Testimonials() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="bg-white p-4 w-3/4 max-w-80 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-muted p-4 w-3/4 max-w-80 rounded-lg shadow-md">
       <div className="flex items-center mt-1">
         <Image
           src={testimonial.avatar}
@@ -53,12 +53,14 @@ function TestimonialCard({ testimonial }) {
           className="w-12 h-12 rounded-full mr-4"
         />
         <div>
-          <h3 className="text-lg text-gray-900 font-medium">
+          <h3 className="text-lg text-gray-900 dark:text-foreground font-medium">
             {testimonial.name}
           </h3>
         </div>
       </div>
-      <p className="text-gray-700 mt-3 text-lg">{testimonial.text}</p>
+      <p className="text-gray-700 dark:text-foreground mt-3 text-lg">
+        {testimonial.text}
+      </p>
     </div>
   );
 }
