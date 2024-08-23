@@ -20,6 +20,7 @@ import List from "@/public/shop/list/list";
 import Checkbox from "@/public/shop/checkbox/checkbox";
 import Card from "@/public/shop/card/card";
 import CartButton from "@/public/shop/cartButton/cartButton";
+import LinkButton from "@/public/shop/linkButton/linkButton";
 
 export const componentMap = {
   "navigation-bar": {
@@ -142,5 +143,11 @@ export const componentMap = {
     component: <CartButton />,
     codePath: "/shop/cartButton/code.txt",
     title: "Cart Button Component",
+  },
+  "link-button": {
+    component: <LinkButton />,
+    codePath: "/shop/linkButton/code.txt",
+    usagePath: "/shop/linkButton/usage.txt",
+    title: "Link Button Component",
   },
 };
