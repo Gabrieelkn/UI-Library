@@ -1,0 +1,11 @@
+import LinkButton from './components/LinkButton';
+
+const Example = () => {
+  return (
+    <div className="space-y-4">
+      <LinkButton href="/documentation" text="See docs"/>
+    </div>
+  );
+};
+
+export default Example;
