@@ -23,10 +23,10 @@ function Tooltip({ text, children }) {
       onMouseLeave={() => setVisible(false)}
     >
       {children}
-      <div
+       <div
         className={`${
-          visible ? "opacity-100" : "opacity-0 z-[-99999]"
-        } absolute transition-all duration-500 ease-in-out bottom-full text-center mb-2 w-32 p-2 text-sm rounded-md shadow-foreground shadow-sm`}
+          visible ? "opacity-100" : "opacity-0 z-[99999]"
+        } bg-secondary z-50 text-popover-foreground absolute transition-all duration-300 ease-in-out top-full mt-1 text-center max-w-xs px-3 py-1.5 text-sm rounded-md`}
       >
         {text}
       </div>
