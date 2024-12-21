@@ -6,7 +6,6 @@ import { componentMap } from "@/utils/componentsMap";
 export default async function SingleComponent({ params }) {
   const { slug } = params;
 
-  // Retrieve the component information based on the slug
   const componentInfo = componentMap[slug];
 
   if (!componentInfo) {
@@ -14,7 +13,6 @@ export default async function SingleComponent({ params }) {
   }
 
   try {
-    // Construct the full file paths
     const codeFilePath = path.join(
       process.cwd(),
       "public",
