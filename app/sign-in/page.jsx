@@ -19,9 +19,9 @@ export default function Login() {
 
     if (error) {
       console.error("Google Login Error:", error);
-      router.push("/error"); // Navigate to an error page
+      router.push("/error");
     } else {
-      router.push("/"); // Redirect to the home page after successful login
+      router.push("/");
     }
   };
 
@@ -32,9 +32,9 @@ export default function Login() {
 
     if (error) {
       console.error("GitHub Login Error:", error);
-      router.push("/error"); // Navigate to an error page
+      router.push("/error");
     } else {
-      router.push("/"); // Redirect to the home page after successful login
+      router.push("/");
     }
   };
 
