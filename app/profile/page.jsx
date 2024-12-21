@@ -6,7 +6,7 @@ import Image from "next/image";
 import Spinner from "@/public/shop/spinner/spinner";
 
 export default function User() {
-  const { user, setUser } = useUser(); // Get the user object
+  const { user, setUser } = useUser();
   const router = useRouter();
 
   const handleLogout = async () => {
