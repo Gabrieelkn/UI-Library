@@ -10,10 +10,8 @@ import {
 import { usePathname } from "next/navigation";
 
 function transformPath(path) {
-  // Split the path into segments, filter out any empty segments
   let segments = path.split("/").filter(Boolean);
 
-  // Transform each segment
   return segments.map((segment) => {
     return segment.charAt(0).toUpperCase() + segment.slice(1);
   });
