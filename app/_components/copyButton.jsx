@@ -5,7 +5,6 @@ import { FaRegCopy } from "react-icons/fa";
 
 function CopyButton({ code }) {
   const [value, setValue] = useState({ code });
-  console.log(value);
 
   const [copied, setCopied] = useState(false);
   return (
