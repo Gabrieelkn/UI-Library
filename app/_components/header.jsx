@@ -30,13 +30,13 @@ export default function Header() {
       <header className=" h-[20vh] md:h-[10vh]">
         <div className="container flex-wrap md:flex-nowrap h-full flex justify-between items-center">
           <Link
-            className="flex h-1/2 items-center justify-center w-[100px] h-[100px]" // Container styles
+            className="flex h-1/2 items-center justify-center w-[100px] h-[100px]"
             href="/"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="80" // Adjust width as needed
-              height="80" // Adjust height as needed
+              width="80"
+              height="80"
               fill="green"
               viewBox="0 0 300 80"
               className="text-center"
